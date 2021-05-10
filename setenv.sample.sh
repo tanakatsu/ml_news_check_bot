@@ -1,0 +1,2 @@
+export ML_NEWS_CHECKER_SLACK_TOKEN=your_slack_token_is_here
+export ML_NEWS_CHECKER_SLACK_CHANNEL=your_slack_channel_is_here
