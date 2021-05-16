@@ -19,3 +19,9 @@ You can install these packages by `pip install -r requirements.txt`.
 1. Just run `python ml_news_bot.py`
 
 That's it. No sweat.
+
+
+### Example of crontab settings
+```
+00 09 * * * cd /home/who/path/to/ml_news_check_bot_directory; ML_NEWS_CHECKER_SLACK_TOKEN=xxx ML_NEWS_CHECKER_SLACK_CHANNEL=your_channel /home/who/anaconda3/envs/your_env_name/bin/python ml_news_bot.py
+```
