@@ -37,12 +37,14 @@ for cat in settings.CATEGORIES:
 
     for entry in d.entries:
         published = datetime.datetime(*entry.published_parsed[:6])
-        if entry.link in history_links or entry.link in temp_links:
+        link = entry.link
+        link = link.replace("?utm_source=feed", "")
+        if link in history_links or link in temp_links:
             continue
         if published >= search_from and published < search_to:
             latest_entries.append(entry)
-            history.append((entry.link, entry.published_parsed[:3]))
-            temp_links.append(entry.link)
+            history.append((link, entry.published_parsed[:3]))
+            temp_links.append(link)
 
 print(f'Found {len(latest_entries)} articles')
 
