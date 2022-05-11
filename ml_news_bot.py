@@ -22,7 +22,10 @@ print(search_from, '-', search_to)
 
 # Read history
 if os.path.exists(settings.HISTORY_FILE):
-    history = json.load(open(settings.HISTORY_FILE, "r"))
+    try:
+        history = json.load(open(settings.HISTORY_FILE, "r"))
+    except json.decoder.JSONDecodeError:
+        history = []
 else:
     history = []
 history_links = [x[0] for x in history]
